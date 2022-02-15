@@ -49,7 +49,7 @@ def convert(message: telebot.types.Message):
     except Exception as e:
         bot.reply_to(message, f'Извините, но мы не поддерживаем эти валюты\n{e}')
     else:
-        text = "{:f}".format(total_base) + f'  {icons.get(base.upper())}'
+        text = "{:10.4f}".format(total_base) + f'  {icons.get(base.upper())}'
 
         bot.send_message(message.chat.id, text)
 
